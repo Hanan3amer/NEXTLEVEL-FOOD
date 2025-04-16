@@ -17,9 +17,7 @@ export async function generateMetadata({ params }) {
 export default async function MeailDetailsPage({ params }) {
   const meal = await getMealDetails(params.slug);
 
-  if (!meal) {
-    notFound();
-  }
+  if (!meal) notFound();
 
   meal.instructions = meal.instructions.replace(/\n/g, "<br>");
 
